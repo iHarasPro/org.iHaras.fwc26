@@ -1,0 +1,118 @@
+# -------------------------------------------------------------------- #
+  defaultMarkdownHandler             = 'goldmark'
+# -------------------------------------------------------------------- #
+  [goldmark]
+# -------------------------------------------------------------------- #
+  duplicateResourceFiles             = true
+# -------------------------------------------------------------------- #
+  [goldmark.extensions]
+# -------------------------------------------------------------------- #
+  strikethrough                      = true
+  definitionList                     = true
+  taskList                           = true
+  table                              = true
+  linkify                            = true
+  linkifyProtocol                    = 'https'
+# -------------------------------------------------------------------- #
+  [goldmark.extensions.typographer]
+# -------------------------------------------------------------------- #
+  disable                            = true
+  apostrophe                         = ''
+  ellipsis                           = ''
+  enDash                             = ''
+  emDash                             = ''
+  leftAngleQuote                     = ''
+  rightAngleQuote                    = ''
+  leftSingleQuote                    = ''
+  rightSingleQuote                   = ''
+  leftDoubleQuote                    = ''
+  rightDoubleQuote                   = ''
+# -------------------------------------------------------------------- #
+  [goldmark.extensions.footnote]
+# -------------------------------------------------------------------- #
+  enable                             = false
+  enableAutoIDPrefix                 = false
+  backlinkHTML                       = ''
+# -------------------------------------------------------------------- #
+  [goldmark.extensions.passthrough]
+# -------------------------------------------------------------------- #
+  enable                             = false
+  delimiters.block                   = [
+  ]
+  delimiters.inline                  = [
+  ]
+# -------------------------------------------------------------------- #
+  [goldmark.extensions.cjk]
+# -------------------------------------------------------------------- #
+  enable                             = false
+  escapedSpace                       = false
+  eastAsianLineBreaks                = false
+  eastAsianLineBreaksStyle           = 'CSS3Draft'
+# -------------------------------------------------------------------- #
+  [goldmark.extensions.extras]
+# -------------------------------------------------------------------- #
+  mark                               = { enable = false }
+  insert                             = { enable = false }
+  delete                             = { enable = false }
+  subscript                          = { enable = false }
+  superscript                        = { enable = false }
+# -------------------------------------------------------------------- #
+  [goldmark.parser]
+# -------------------------------------------------------------------- #
+  autoIDType                         = 'blackfriday'
+  autoHeadingID                      = false
+  autoDefinitionTermID               = false
+  wrapStandAloneImageWithinParagraph = false
+  attribute.block                    = false
+  attribute.title                    = false
+# -------------------------------------------------------------------- #
+  [goldmark.renderer]
+# -------------------------------------------------------------------- #
+  unsafe                             = false
+  xhtml                              = false
+  hardWraps                          = false
+# -------------------------------------------------------------------- #
+  [goldmark.renderHooks]
+# -------------------------------------------------------------------- #
+  link.useEmbedded                   = 'never'
+  image.useEmbedded                  = 'never'
+# -------------------------------------------------------------------- #
+  [asciidocExt]
+# -------------------------------------------------------------------- #
+  backend                            = 'html5'
+  safeMode                           = 'unsafe'
+  failureLevel                       = 'fatal'
+  verbose                            = false
+  trace                              = false
+  noHeaderOrFooter                   = true
+  preserveTOC                        = false
+  sectionNumbers                     = false
+  workingFolderCurrent               = false
+  extensions                         = [
+  ]
+# -------------------------------------------------------------------- #
+  [asciidocExt.attributes]
+# -------------------------------------------------------------------- #
+# -------------------------------------------------------------------- #
+  [highlight]
+# -------------------------------------------------------------------- #
+  wrapperClass                       = ''
+  style                              = ''
+  tabwidth                           = 2
+  codeFences                         = true
+  guessSyntax                        = true
+  noClasses                          = true
+  lineNos                            = true
+  lineNumbersInTable                 = false
+  lineNoStart                        = 1
+  anchorLineNos                      = false
+  lineAnchors                        = ''
+  hl_Lines                           = ''
+  hl_inline                          = true
+# -------------------------------------------------------------------- #
+  [tableOfContents]
+# -------------------------------------------------------------------- #
+  ordered                            = true
+  startLevel                         = 2
+  endLevel                           = 3
+# -------------------------------------------------------------------- #

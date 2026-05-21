@@ -1,0 +1,79 @@
+# -------------------------------------------------------------------- #
+  title                                = 'FWC26'
+  copyright                            = '© 2026 ibrahim Haras'
+  baseURL                              = 'https://fwc26.iHaras.org/'
+  timezone                             = 'UTC'
+# -------------------------------------------------------------------- #
+  publishDir                           = 'client'
+  resourceDir                          = 'resources'
+  themesDir                            = 'themes'
+# -------------------------------------------------------------------- #
+  enableGitInfo                        = false
+  enableMissingTranslationPlaceholders = false
+# -------------------------------------------------------------------- #
+  defaultContentLanguage               = 'en'
+  defaultContentLanguageInSubDir       = false
+# -------------------------------------------------------------------- #
+  defaultContentRole                   = 'main'
+  defaultContentRoleInSubDir           = false
+# -------------------------------------------------------------------- #
+  defaultContentVersion                = '@1.0.0'
+  defaultContentVersionInSubDir        = false
+# -------------------------------------------------------------------- #
+  cleanDestinationDir                  = true
+# -------------------------------------------------------------------- #
+  noBuildLock                          = false
+  noChmod                              = false
+  noTimes                              = false
+# -------------------------------------------------------------------- #
+  timeout                              = '60s'
+  renderSegments                       = [
+  ]
+# -------------------------------------------------------------------- #
+  defaultOutputFormat                  = ''
+  disableHugoGeneratorInject           = true
+  disableDefaultSiteRedirect           = false
+  disableAliases                       = false
+  enableRobotsTXT                      = false
+  disableKinds                         = [
+  ]
+  disableLanguages                     = [
+  ]
+# -------------------------------------------------------------------- #
+  buildDrafts                          = false
+  buildExpired                         = false
+  buildFuture                          = false
+# -------------------------------------------------------------------- #
+  disableLiveReload                    = false
+# -------------------------------------------------------------------- #
+  disablePathToLower                   = false
+  removePathAccents                    = false
+# -------------------------------------------------------------------- #
+  ignoreCache                          = false
+  ignoreVendorPaths                    = ''
+  ignoreFiles                          = [
+  ]
+# -------------------------------------------------------------------- #
+  refLinksErrorLevel                   = ''
+  refLinksNotFoundURL                  = ''
+# -------------------------------------------------------------------- #
+  panicOnWarning                       = false
+  printUnusedTemplates                 = true
+  printPathWarnings                    = true
+  printI18nWarnings                    = true
+# -------------------------------------------------------------------- #
+  ignoreLogs                           = [
+  ]
+# -------------------------------------------------------------------- #
+  sectionPagesMenu                     = ''
+  mainSections                         = [
+  ]
+# -------------------------------------------------------------------- #
+  titleCaseStyle                       = 'none'
+  capitalizeListTitles                 = false
+  pluralizeListTitles                  = false
+# -------------------------------------------------------------------- #
+  summaryLength                        = 72
+  hasCJKLanguage                       = false
+  enableEmoji                          = false
+# -------------------------------------------------------------------- #

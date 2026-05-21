@@ -1,0 +1,257 @@
+# -------------------------------------------------------------------- #
+  [html]
+# -------------------------------------------------------------------- #
+  baseName       = 'index'
+  mediaType      = 'text/html'
+  rel            = 'canonical'
+  isHTML         = true
+  isPlainText    = false
+  permalinkable  = true
+  notAlternative = false
+  ugly           = false
+  noUgly         = false
+  root           = false
+  path           = ''
+  protocol       = ''
+  weight         = 10
+# -------------------------------------------------------------------- #
+  [404]
+# -------------------------------------------------------------------- #
+  baseName       = 'index'
+  mediaType      = 'text/html'
+  rel            = ''
+  isHTML         = true
+  isPlainText    = false
+  permalinkable  = true
+  notAlternative = true
+  ugly           = true
+  noUgly         = false
+  root           = false
+  path           = ''
+  protocol       = ''
+  weight         = 0
+# -------------------------------------------------------------------- #
+  [alias]
+# -------------------------------------------------------------------- #
+  baseName       = 'index'
+  mediaType      = 'text/html'
+  rel            = ''
+  isHTML         = true
+  isPlainText    = false
+  permalinkable  = false
+  notAlternative = false
+  ugly           = true
+  noUgly         = false
+  root           = false
+  path           = ''
+  protocol       = ''
+  weight         = 0
+# -------------------------------------------------------------------- #
+  [amp]
+# -------------------------------------------------------------------- #
+  baseName       = 'index'
+  mediaType      = 'text/html'
+  rel            = 'amphtml'
+  isHTML         = true
+  isPlainText    = false
+  permalinkable  = true
+  notAlternative = false
+  ugly           = false
+  noUgly         = false
+  root           = false
+  path           = 'amp'
+  protocol       = ''
+  weight         = 0
+# -------------------------------------------------------------------- #
+  [css]
+# -------------------------------------------------------------------- #
+  baseName       = 'index'
+  mediaType      = 'text/css'
+  rel            = 'stylesheet'
+  isHTML         = false
+  isPlainText    = true
+  permalinkable  = false
+  notAlternative = true
+  ugly           = false
+  noUgly         = false
+  root           = false
+  path           = ''
+  protocol       = ''
+  weight         = 0
+# -------------------------------------------------------------------- #
+  [calendar]
+# -------------------------------------------------------------------- #
+  baseName       = 'index'
+  mediaType      = 'text/calendar'
+  rel            = 'alternate'
+  isHTML         = false
+  isPlainText    = true
+  permalinkable  = false
+  notAlternative = false
+  ugly           = false
+  noUgly         = false
+  root           = false
+  path           = ''
+  protocol       = 'webcal://'
+  weight         = 0
+# -------------------------------------------------------------------- #
+  [csv]
+# -------------------------------------------------------------------- #
+  baseName       = 'index'
+  mediaType      = 'text/csv'
+  rel            = 'alternate'
+  isHTML         = false
+  isPlainText    = true
+  permalinkable  = false
+  notAlternative = false
+  ugly           = false
+  noUgly         = false
+  root           = false
+  path           = ''
+  protocol       = ''
+  weight         = 0
+# -------------------------------------------------------------------- #
+  [gotmpl]
+# -------------------------------------------------------------------- #
+  baseName       = ''
+  mediaType      = 'text/x-gotmpl'
+  rel            = ''
+  isHTML         = false
+  isPlainText    = true
+  permalinkable  = false
+  notAlternative = true
+  ugly           = false
+  noUgly         = false
+  root           = false
+  path           = ''
+  protocol       = ''
+  weight         = 0
+# -------------------------------------------------------------------- #
+  [markdown]
+# -------------------------------------------------------------------- #
+  baseName       = 'index'
+  mediaType      = 'text/markdown'
+  rel            = 'alternate'
+  isHTML         = false
+  isPlainText    = true
+  permalinkable  = false
+  notAlternative = false
+  ugly           = false
+  noUgly         = false
+  root           = false
+  path           = ''
+  protocol       = ''
+  weight         = 0
+# -------------------------------------------------------------------- #
+  [robots]
+# -------------------------------------------------------------------- #
+  baseName       = 'robots'
+  mediaType      = 'text/plain'
+  rel            = 'alternate'
+  isHTML         = false
+  isPlainText    = true
+  permalinkable  = false
+  notAlternative = false
+  ugly           = false
+  noUgly         = false
+  root           = true
+  path           = ''
+  protocol       = ''
+  weight         = 0
+# -------------------------------------------------------------------- #
+  [rss]
+# -------------------------------------------------------------------- #
+  baseName       = 'index'
+  mediaType      = 'application/rss+xml'
+  rel            = 'alternate'
+  isHTML         = false
+  isPlainText    = false
+  permalinkable  = false
+  notAlternative = false
+  ugly           = false
+  noUgly         = false
+  root           = false
+  path           = ''
+  protocol       = ''
+  weight         = 0
+# -------------------------------------------------------------------- #
+  [atom]
+# -------------------------------------------------------------------- #
+  baseName       = 'index'
+  mediaType      = 'application/atom+xml'
+  rel            = 'alternate'
+  isHTML         = false
+  isPlainText    = false
+  permalinkable  = false
+  notAlternative = false
+  ugly           = false
+  noUgly         = false
+  root           = false
+  path           = ''
+  protocol       = ''
+  weight         = 0
+# -------------------------------------------------------------------- #
+  [sitemap]
+# -------------------------------------------------------------------- #
+  baseName       = 'sitemap'
+  mediaType      = 'application/xml'
+  rel            = 'sitemap'
+  isHTML         = false
+  isPlainText    = false
+  permalinkable  = false
+  notAlternative = false
+  ugly           = true
+  noUgly         = false
+  root           = false
+  path           = ''
+  protocol       = ''
+  weight         = 0
+# -------------------------------------------------------------------- #
+  [sitemapindex]
+# -------------------------------------------------------------------- #
+  baseName       = 'sitemap'
+  mediaType      = 'application/xml'
+  rel            = 'sitemap'
+  isHTML         = false
+  isPlainText    = false
+  permalinkable  = false
+  notAlternative = false
+  ugly           = true
+  noUgly         = false
+  root           = true
+  path           = ''
+  protocol       = ''
+  weight         = 0
+# -------------------------------------------------------------------- #
+  [json]
+# -------------------------------------------------------------------- #
+  baseName       = 'index'
+  mediaType      = 'application/json'
+  rel            = 'alternate'
+  isHTML         = false
+  isPlainText    = true
+  permalinkable  = false
+  notAlternative = false
+  ugly           = false
+  noUgly         = false
+  root           = false
+  path           = ''
+  protocol       = ''
+  weight         = 0
+# -------------------------------------------------------------------- #
+  [webappmanifest]
+# -------------------------------------------------------------------- #
+  baseName       = 'index'
+  mediaType      = 'application/manifest+json'
+  rel            = 'manifest'
+  isHTML         = false
+  isPlainText    = true
+  permalinkable  = false
+  notAlternative = true
+  ugly           = false
+  noUgly         = false
+  root           = false
+  path           = ''
+  protocol       = ''
+  weight         = 0
+# -------------------------------------------------------------------- #
