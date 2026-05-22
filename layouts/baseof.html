@@ -1,0 +1,204 @@
+﻿<!DOCTYPE HTML>
+<html
+  lang = "{{ .Language.Locale }}"
+>
+  <head>
+    <meta
+      charset  = "utf-8"
+    />
+    <meta
+      name     = "viewport"
+      content  = "width=device-width,initial-scale=1.0"
+    />
+    <meta
+      name     = "referrer"
+      content  = "strict-origin-when-cross-origin"
+    />
+    <meta
+      name     = "color-scheme"
+      content  = "light dark"
+    />
+    <meta
+      name     = "theme-color"
+      content  = "{{ or ( .Param `theme-color.light` ) `#FFFFFF` }}"
+      media    = "(prefers-color-scheme: light)"
+    />
+    <meta
+      name     = "theme-color"
+      content  = "{{ or ( .Param `theme-color.dark`  ) `#000000` }}"
+      media    = "(prefers-color-scheme: dark)"
+    />
+    {{- with .Param `application-name` }}
+    <meta
+      name     = "application-name"
+      content  = "{{ . }}"
+    />
+    {{- end }}
+    {{- range .Param `authors` }}
+    <meta
+      name     = "author"
+      content  = "{{ . }}"
+    />
+    {{- end }}
+    {{- range .Param `generators` }}
+    <meta
+      name     = "generator"
+      content  = "{{ . }}"
+    />
+    {{- end }}
+    {{- with .Description }}
+    <meta
+      name     = "description"
+      content  = "{{ . }}"
+    />
+    {{- end }}
+    {{- with .Keywords }}
+    <meta
+      name     = "keywords"
+      content  = "{{ collections.Delimit . `,` }}"
+    />
+    {{- end }}
+    <link
+      rel      = "canonical"
+      href     = "{{ .Permalink }}"
+    />
+    {{- range .AllTranslations }}
+    <link
+      rel      = "alternate"
+      href     = "{{ .Permalink }}"
+      hreflang = "{{ .Language.Locale }}"
+    />
+    {{- end }}
+    {{- with .Site.Home.OutputFormats.Get `rss` }}
+    <link
+      rel      = "alternate"
+      type     = "application/rss+xml"
+      href     = "{{ .Permalink }}"
+    />
+    {{- end }}
+    {{- with .Site.Home.OutputFormats.Get `atom` }}
+    <link
+      rel      = "alternate"
+      type     = "application/atom+xml"
+      href     = "{{ .Permalink }}"
+    />
+    {{- end }}
+    {{- with .Prev }}
+    <link
+      rel      = "prev"
+      href     = "{{ .RelPermalink }}"
+    />
+    {{- end }}
+    {{- with .Next }}
+    <link
+      rel      = "next"
+      href     = "{{ .RelPermalink }}"
+    />
+    {{- end }}
+    {{- with .Site.GetPage `help` }}
+    <link
+      rel      = "help"
+      href     = "{{ .RelPermalink }}"
+    />
+    {{- end }}
+    {{- with .Site.GetPage `search` }}
+    <link
+      rel      = "search"
+      href     = "{{ .RelPermalink }}"
+    />
+    {{- end }}
+
+    {{- with .Site.GetPage `author` }}
+    <link
+      rel      = "author"
+      href     = "{{ .RelPermalink }}"
+    />
+    {{- end }}
+    {{- with .Site.GetPage `license` }}
+    <link
+      rel      = "license"
+      href     = "{{ .RelPermalink }}"
+    />
+    {{- end }}
+    {{- with .Site.GetPage `privacy-policy` }}
+    <link
+      rel      = "privacy-policy"
+      href     = "{{ .RelPermalink }}"
+    />
+    {{- end }}
+    {{- with .Site.GetPage `terms-of-service` }}
+    <link
+      rel      = "terms-of-service"
+      href     = "{{ .RelPermalink }}"
+    />
+    {{- end }}
+    {{- with resources.Get `favicon.ico` }}
+    <link
+      rel      = "icon"
+      type     = "{{ .MediaType.Type }}"
+      href     = "{{ .RelPermalink }}"
+      sizes    = "16x16 32x32 48x48"
+    />
+    {{- end }}
+    {{- range ( slice
+      ( resources.Get `favicon-16x16.png` )
+      ( resources.Get `favicon-32x32.png` )
+      ( resources.Get `favicon-48x48.png` )
+      )
+    }}
+    <link
+      rel      = "icon"
+      type     = "{{ .MediaType.Type }}"
+      href     = "{{ .RelPermalink }}"
+      sizes    = "{{ .Width }}x{{ .Height }}"
+    />
+    {{- end }}
+    {{- with resources.Get `index.manifest` }}
+    <link
+      rel      = "manifest"
+      type     = "application/manifest+json"
+      href     = "{{ .RelPermalink }}"
+    />
+    {{- end }}
+    {{- range collections.Append
+      (  resources.Match `**.css` )
+      ( .Resources.Match `**.css` )
+    }}
+    {{- with resources.ExecuteAsTemplate .Name $ ( resources.Minify . ) }}
+    <link
+      rel      = "stylesheet"
+      type     = "text/css"
+      href     = "{{ .RelPermalink }}"
+    />
+    {{- end }}
+    {{- end }}
+    {{- range collections.Append
+      (  resources.Match `**.mjs` )
+      ( .Resources.Match `**.mjs` )
+    }}
+    {{- with resources.ExecuteAsTemplate .Name $ ( resources.Minify . ) }}
+    <script
+      type     = "module"
+      src      = "{{ .RelPermalink }}"
+    >
+    </script>
+    {{- end }}
+    {{- end }}
+    <title>
+      {{- .Site.Title -}}
+      {{- if not .IsHome }} · {{ .Title }}{{ end -}}
+    </title>
+  </head>
+  <body>
+    <header>
+      {{- template `header` . }}
+    </header>
+    <main>
+      {{- template `main` . }}
+    </main>
+    <footer>
+      {{- template `footer` . }}
+    </footer>
+    {{- template `dialogs` . }}
+  </body>
+</html>
