@@ -1,0 +1,79 @@
+/* ------------------------------------------------------------------ */
+/* View Transition
+/* ------------------------------------------------------------------ */
+
+@view-transition {
+  navigation : auto;
+  type       : none;
+}
+
+/* ------------------------------------------------------------------ */
+/* Root
+/* ------------------------------------------------------------------ */
+
+:root {
+  --color-background : light-dark(
+    hsl(  0   0%  95% / 100%),
+    hsl(  0   0%   5% / 100%)
+  );
+  --color-foreground : light-dark(
+    hsl(  0   0%   5% / 100%),
+    hsl(  0   0%  95% / 100%)
+  );
+  --color-accent : light-dark(
+    hsl(220  50%  40% / 100%),
+    hsl(220  50%  60% / 100%)
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Reset
+/* ------------------------------------------------------------------ */
+
+*, *::before, *::after {
+  box-sizing : border-box;
+  margin     : 0;
+  padding    : 0;
+}
+
+::selection {
+  background-color : hsl(from var(--color-accent) h s l / 50%);
+}
+
+::marker {
+  color : var(--color-accent);
+}
+
+/* ------------------------------------------------------------------ */
+
+html {
+  /* Color Scheme */
+  color-scheme          : light dark;
+  accent-color          : var(--color-accent);
+
+  /* Background */
+  background-color      : var(--color-background);
+
+  /* Animations */
+  interpolate-size      : allow-keywords;
+
+  /* Scroll */
+  scroll-behavior       : smooth;
+  scroll-padding-block  : 3.00rem;
+  scroll-padding-inline : 4.00rem;
+  scrollbar-gutter      : stable;
+}
+
+body {
+  /* Block */
+  inline-size           : min(73.5rem, round(down, ( 100% - 2rem ), 3.5rem));
+  margin-inline         : auto;
+
+  /* Typography */
+  font-family           : system-ui, sans-serif;
+  font-feature-settings : "tnum" on;
+  font-optical-sizing   : auto;
+  text-rendering        : optimizeLegibility;
+  text-size-adjust      : none;
+  color                 : var(--color-foreground);
+}
