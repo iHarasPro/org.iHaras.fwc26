@@ -1,0 +1,49 @@
+code,group,index,title
+MEX,A,1,Mexico
+RSA,A,2,South Africa
+KOR,A,3,South Korea
+CZE,A,4,Czechia
+CAN,B,1,Canada
+BIH,B,2,Bosnia and Herzegovina
+QAT,B,3,Qatar
+SUI,B,4,Switzerland
+BRA,C,1,Brazil
+MAR,C,2,Morocco
+HAI,C,3,Haiti
+SCO,C,4,Scotland
+USA,D,1,USA
+PAR,D,2,Paraguay
+AUS,D,3,Australia
+TUR,D,4,Türkiye
+GER,E,1,Germany
+CUW,E,2,Curaçao
+CIV,E,3,Ivory Coast
+ECU,E,4,Ecuador
+NED,F,1,Netherlands
+JPN,F,2,Japan
+SWE,F,3,Sweden
+TUN,F,4,Tunisia
+BEL,G,1,Belgium
+EGY,G,2,Egypt
+IRN,G,3,Iran
+NZL,G,4,New Zealand
+ESP,H,1,Spain
+CPV,H,2,Cape Verde
+KSA,H,3,Saudi Arabia
+URU,H,4,Uruguay
+FRA,I,1,France
+SEN,I,2,Senegal
+IRQ,I,3,Iraq
+NOR,I,4,Norway
+ARG,J,1,Argentina
+ALG,J,2,Algeria
+AUT,J,3,Austria
+JOR,J,4,Jordan
+POR,K,1,Portugal
+COD,K,2,DR Congo
+UZB,K,3,Uzbekistan
+COL,K,4,Colombia
+ENG,L,1,England
+CRO,L,2,Croatia
+GHA,L,3,Ghana
+PAN,L,4,Panama
