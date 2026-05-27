@@ -77,3 +77,104 @@ body {
   text-size-adjust      : none;
   color                 : var(--color-foreground);
 }
+
+main {
+  /* Display Type(s) */
+  display               : block grid;
+
+  /* Grid */
+  grid-template-columns : auto 1fr;
+  align-items           : center;
+  gap                   : 3.00rem 1.00rem;
+
+  /* Other */
+  user-select           : none;
+}
+
+div[data-team] {
+
+  /* Display Type(s) */
+  display               : contents;
+
+  /* Typography */
+  text-align            : center;
+
+  & figure {
+
+    /* Position */
+    position : relative;
+
+    & img {
+      block-size  : auto;
+      inline-size : 3.00rem;
+    }
+
+    & figcaption {
+
+      /* Block */
+      inline-size : 100%;
+
+      /* Position */
+      position    : absolute;
+    }
+  }
+}
+
+div:has(> div[data-count]) {
+  /* Display Type(s) */
+  display         : block flex;
+
+  /* Flex */
+  flex-wrap       : wrap;
+  gap             : 0.50rem;
+}
+
+div[data-count] {
+  /* Position */
+  position           : relative;
+
+  /* Block */
+  block-size         : 3.00rem;
+  inline-size        : 3.00rem;
+  place-content      : center;
+
+  /* Border */
+  border-width       : 0.125rem;
+  border-style       : solid;
+  border-color       : hsl(from var(--color-foreground) h s 50% / 100%);
+  border-radius      : 0.25rem;
+
+  /* Background */
+  --color-background : light-dark(
+    hsl(130  50%  70% / 100%),
+    hsl(130  50%  30% / 100%)
+  );
+  background-color   : var(--color-background);
+
+  &::after {
+    /* Content */
+    content          : attr(data-count);
+
+    /* Position */
+    position         : absolute;
+    inset            : 0.20rem 0.20rem auto auto;
+
+    /* Typography */
+    font-size        : 0.80rem;
+  }
+}
+
+div[data-count="0"] {
+  /* Background */
+  --color-background : transparent;
+
+  &::after {
+    content          : none;
+  }
+}
+
+div[data-count="1"] {
+  &::after {
+    content          : none;
+  }
+}

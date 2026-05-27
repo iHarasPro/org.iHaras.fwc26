@@ -1,4 +1,87 @@
 {{- define `main` }}
+<div
+  data-team  = "FWC"
+  data-group = "0"
+  data-index = "0"
+  >
+  <figure>
+    {{- with resources.Get `logo/FWC.avif` }}
+    <img
+    src      = "{{ .RelPermalink }}"
+    alt      = "Logo of FIFA World Cup 2026."
+    width    = "{{ .Width }}"
+    height   = "{{ .Height }}"
+    />
+    {{- end }}
+    <figcaption>FWC</figcaption>
+  </figure>
+  <div>
+    {{- range collections.Seq 0 19 }}
+    <div
+      id         = "FWC-{{ . }}"
+      data-count = "0"
+      >
+      {{- . -}}
+    </div>
+      {{- end }}
+  </div>
+</div>
+<div
+  data-team  = "CC"
+  data-group = "0"
+  data-index = "1"
+  >
+  <figure>
+    {{- with resources.Get `logo/CCC.avif` }}
+    <img
+    src      = "{{ .RelPermalink }}"
+    alt      = "Logo of Coca‐Coca Company."
+    width    = "{{ .Width }}"
+    height   = "{{ .Height }}"
+    />
+    {{- end }}
+    <figcaption>CC</figcaption>
+  </figure>
+  <div>
+    {{- range collections.Seq 1 12 }}
+    <div
+      id         = "CC-{{ . }}"
+      data-count = "0"
+      >
+      {{- . -}}
+    </div>
+      {{- end }}
+  </div>
+</div>
+{{- range $team := resources.Get `teams.csv` | transform.Unmarshal (dict `targetType` `map` )  }}
+<div
+  data-team  = "{{ $team.code }}"
+  data-group = "{{ $team.group }}"
+  data-index = "{{ $team.index }}"
+  >
+  <figure>
+    {{- with resources.Get ( fmt.Printf `logo/%s.avif` $team.code ) }}
+    <img
+    src      = "{{ .RelPermalink }}"
+    alt      = "{{ $team.title }}’s flag."
+    width    = "{{ .Width }}"
+    height   = "{{ .Height }}"
+    />
+    {{- end }}
+    <figcaption>{{ $team.code }}</figcaption>
+  </figure>
+  <div>
+    {{- range collections.Seq 1 20 }}
+    <div
+      id         = "{{ $team.code }}-{{ . }}"
+      data-count = "0"
+      >
+      {{- . -}}
+    </div>
+      {{- end }}
+  </div>
+</div>
+{{- end }}
 {{- end }}
 
 

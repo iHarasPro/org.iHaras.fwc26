@@ -113,6 +113,10 @@ Acknowledgements
 Emre Bulat
   Original concept and inspiration.
 
+Burak Yeşilyurt
+  Co‐developed the JavaScript implementation,
+  particularly the collections management logic.
+
 
 License
 ========================================================================
