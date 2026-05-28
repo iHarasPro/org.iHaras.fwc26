@@ -86,6 +86,42 @@
 
 
 {{- define `header` }}
+<h1>FWC 2026</h1>
+<div class="sheet-manager">
+  <select id="sheet-selector" aria-label="Select sheet."></select>
+  <button
+    id                  = "sheet-menu-toggle"
+    popovertarget       = "sheet-menu"
+    popovertargetaction = "toggle"
+    aria-label          = "Toggle popover menu."
+    >
+    <svg
+      xmlns   = "http://www.w3.org/2000/svg"
+      viewBox = "0 0 24 24"
+      width   = "24px"
+      height  = "24px"
+    >
+      <path
+      stroke          = "currentColor"
+      stroke-width    = "4"
+      stroke-linecap  = "round"
+      d               = "
+        M  4  4  L 20  4
+        M  4 12  L 20 12
+        M  4 20  L 20 20
+      ">
+      </path>
+    </svg>
+  </button>
+  <div
+    id      = "sheet-menu"
+    popover = "auto"
+    >
+    <button id="new-sheet"    aria-label="New sheet."   >New</button>
+    <button id="rename-sheet" aria-label="Rename sheet.">Rename</button>
+    <button id="delete-sheet" aria-label="Delete sheet.">Delete</button>
+  </div>
+</div>
 {{- end }}
 
 

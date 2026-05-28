@@ -78,6 +78,165 @@ body {
   color                 : var(--color-foreground);
 }
 
+body > header {
+  /* Display Type(s) */
+  display         : block flex;
+
+  /* Block */
+  margin-block    : 0.50rem 1.50rem;
+  padding-block   : 1.00rem;
+
+  /* Flex */
+  align-items     : center;
+  justify-content : space-between;
+}
+
+h1 {
+  font-size : 1.20rem;
+}
+
+button {
+  /* Typography */
+  font  : inherit;
+  color : inherit;
+
+  & svg {
+    /* Block */
+    block-size: 100%;
+    inline-size: auto;
+  }
+}
+
+.sheet-manager {
+  /* Display Type(s) */
+  display         : block flex;
+
+  /* Flex */
+  align-items     : center;
+  justify-content : space-between;
+  gap             : 1.00rem;
+}
+
+#sheet-selector {
+  /* Block */
+  min-inline-size  : 12.00rem;
+  padding-block    : 0.50rem 0.50rem;
+  padding-inline   : 1.00rem 2.00rem;
+
+  /* Border */
+  border-width     : 0.0625rem;
+  border-style     : solid;
+  border-color     : hsl(from var(--color-foreground) h s 50% / 40%);
+  border-radius    : 0.25rem;
+
+  /* Background */
+  background-color : hsl(from var(--color-background) h s l / 80%);
+
+  /* Box Shadow */
+  box-shadow       : 0 0.10rem 0.25rem hsl(from var(--color-foreground) h s 50% / 20%);
+
+  /* Other */
+  cursor           : pointer;
+
+  &:hover {
+    border-color   : var(--color-accent);
+  }
+
+  &:focus-visible {
+    outline-width  : 0.125rem;
+    outline-style  : solid;
+    outline-color  : var(--color-accent);
+    outline-offset : 0.0625rem;
+  }
+}
+
+#sheet-menu {
+
+  /* Block */
+  margin-block     : 0.25rem;
+  padding-block    : 0.25rem;
+  padding-inline   : 0.25rem;
+
+  /* Border */
+  border-width     : 0.125rem;
+  border-style     : solid;
+  border-color     : hsl(from var(--color-foreground) h s 50% / 100%);
+  border-radius    : 0.375rem;
+
+  /* Background */
+  background-color : var(--color-background);
+
+  /* Box Shadow */
+  box-shadow       : 0 0.25rem 0.75rem hsl(from var(--color-foreground) h s 50% / 20%);
+
+  /* Position */
+  position-anchor  : --sheet-menu-toggle;
+  position-area    : end span-start;
+
+  & button {
+    /* Display Type(s) */
+    display          : block;
+
+    /* Block */
+    inline-size      : 100%;
+    margin-block     : 0.10rem;
+    padding-block    : 0.50rem;
+    padding-inline   : 1.00rem 2.00rem;
+
+    /* Border */
+    border           : none;
+    border-radius    : 0.125rem;
+
+    /* Background */
+    background-color : transparent;
+
+    /* Typography */
+    font-size        : 0.875rem;
+    text-align       : start;
+
+    /* Other */
+    cursor           : pointer;
+
+    &:hover {
+      /* Background */
+      background-color : hsl(from var(--color-accent) h s l / 20%);
+    }
+  }
+}
+
+#sheet-menu-toggle {
+
+  /* Display Type(s) */
+  display            : block flex;
+
+  /* Block */
+  padding-block      : 0.25rem;
+  padding-inline     : 0.25rem;
+
+  /* Flex */
+  align-items        : center;
+
+  /* Border */
+  border             : none;
+  border-radius      : 0.25rem;
+
+  /* Background */
+  background-color   : transparent;
+
+  /* Box Shadow */
+  box-shadow       : 0 0.10rem 0.25rem hsl(from var(--color-foreground) h s 50% / 20%);
+
+  /* Position */
+  anchor-name        : --sheet-menu-toggle;
+
+  /* Other */
+  cursor             : pointer;
+
+  &:hover {
+    background-color : hsl(from var(--color-foreground) h s 50% / 15%);
+  }
+}
+
 main {
   /* Display Type(s) */
   display               : block grid;
