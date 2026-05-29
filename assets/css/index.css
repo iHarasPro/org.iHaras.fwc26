@@ -337,3 +337,141 @@ div[data-count="1"] {
     content          : none;
   }
 }
+
+dialog#share {
+
+  /* Block */
+  max-block-size     : 80svh;
+  inline-size        : min(90svw, 32rem);
+  margin-inline      : auto;
+  margin-block       : auto;
+
+  /* Border */
+  border-width       : 0.125rem;
+  border-style       : solid;
+  border-color       : hsl(from var(--color-foreground) h s 50% / 25%);
+  border-radius      : 0.50rem;
+
+  /* Background */
+  background-color   : var(--color-background);
+
+  /* Typography */
+  color              : var(--color-foreground);
+
+  /* Box Shadow */
+  box-shadow         : 0 0.50rem 1.50rem hsl(from var(--color-foreground) h s 50% / 30%);
+
+  &:backdrop {
+    background-color : hsl(from var(--color-foreground) h s 15% / 50%);
+  }
+
+  & header {
+    /* Display Type(s) */
+    display         : block flex;
+
+    /* Block */
+    padding-block   : 0.75rem;
+    padding-inline  : 1.00rem;
+
+    /* Flex */
+    align-items     : center;
+    justify-content : space-between;
+
+    /* Border */
+    border-bottom-width: 0.0625rem;
+    border-bottom-style: solid;
+    border-bottom-color: hsl(from var(--color-foreground) h s 50% / 20%);
+  }
+
+  & h2 {
+    /* Typography */
+    font-size        : 1.10rem;
+    font-weight      : 600;
+  }
+
+  & button#share-close {
+    /* Block */
+    block-size         : 2.00rem;
+    inline-size        : 2.00rem;
+    place-content      : center;
+
+    /* Border */
+    border-width       : 0.0625rem;
+    border-style       : solid;
+    border-color       : hsl(from var(--color-foreground) h s 50% / 15%);
+    border-radius      : 50%;
+
+    /* Background */
+    background-color   : transparent;
+
+    /* Typography */
+    font-size          : 1.25rem;
+
+    /* Other */
+    cursor             : pointer;
+
+    &:hover {
+      /* Background */
+      background-color : hsl(from var(--color-foreground) h s 50% / 15%);
+    }
+  }
+
+  & pre.content {
+    /* Block */
+    max-block-size : calc(80svh - 8.00rem);
+    padding-block  : 1.00rem;
+    padding-inline : 2.00rem;
+
+    /* Typography */
+    font-family    : ui-monospace, monospace;
+    font-size      : 0.80rem;
+    line-height    : 1.40;
+
+    /* Other */
+    overflow       : auto;
+    white-space    : pre;
+    user-select    : text;
+  }
+
+  & div.actions {
+    /* Display Type(s) */
+    display          : block flex;
+
+    /* Border */
+    border-top-width : 0.0625rem;
+    border-top-style : solid;
+    border-top-color : hsl(from var(--color-foreground) h s 50% / 20%);
+  }
+
+  & button.action {
+    /* Block */
+    padding-block             : 1.00rem;
+    padding-inline            : 1.00rem;
+
+    /* Flex */
+    flex                      : 1 0 0%;
+
+    /* Border */
+    border                    : none;
+
+    /* Background */
+    background-color          : transparent;
+
+    /* Typography */
+    font-size                 : 0.90rem;
+
+    /* Other */
+    cursor                    : pointer;
+
+    &:hover {
+      /* Background */
+      background-color        : hsl(from var(--color-accent) h s l / 15%);
+    }
+
+    &:not(:last-child) {
+      border-inline-end-width : 0.0625rem;
+      border-inline-end-style : solid;
+      border-inline-end-color : hsl(from var(--color-foreground) h s 50% / 20%);
+    }
+  }
+}

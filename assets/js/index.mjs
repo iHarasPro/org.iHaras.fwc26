@@ -44,6 +44,26 @@ const SHEET_SELECTOR = document.querySelector("select#sheet-selector");
  */
 const SHEET_MENU = document.querySelector("#sheet-menu");
 
+/**
+ * @type {HTMLDialogElement}
+ */
+const DIALOG_SHARE = document.querySelector("dialog#share");
+
+/**
+ * @type {HTMLPreElement}
+ */
+const DIALOG_SHARE_CONTENT = DIALOG_SHARE.querySelector("pre.content");
+
+/**
+ * @type {HTMLButtonElement}
+ */
+const DIALOG_SHARE_COPY = DIALOG_SHARE.querySelector("#share-copy");
+
+/**
+ * @type {HTMLButtonElement}
+ */
+const DIALOG_SHARE_WHATSAPP = DIALOG_SHARE.querySelector("#share-whatsapp");
+
 
 // Initialize the "select" element
 SHEET_SELECTOR.length = SHEETS.length;
@@ -145,6 +165,34 @@ document.addEventListener("click", function(event) {
       SHEET_SELECTOR.selectedIndex = INDEX;
       // Apply the next Sheet
       applySheet(SHEETS[INDEX]);
+      break;
+    }
+
+    case "share-sheet": {
+      // Close popover
+      SHEET_MENU.hidePopover();
+      DIALOG_SHARE_CONTENT.textContent = generateShareText();
+      DIALOG_SHARE.showModal();
+      break;
+    }
+
+    case "share-close": {
+      DIALOG_SHARE.close();
+      break;
+    }
+
+    case "share-copy": {
+      navigator.clipboard.writeText(DIALOG_SHARE_CONTENT.textContent).then(function() {
+        DIALOG_SHARE_COPY.textContent = "Copied!";
+        setTimeout(function() {
+          DIALOG_SHARE_COPY.textContent = "Copy to Clipboard";
+        }, 2000);
+      })
+      break;
+    }
+
+    case "share-whatsapp": {
+      window.open("https://wa.me/?text=" + encodeURIComponent(DIALOG_SHARE_CONTENT.textContent), "_blank");
       break;
     }
   }
@@ -254,4 +302,84 @@ function applySheet(sheet) {
   DATA_COUNT_LIST.forEach(function(element) {
     element.dataset.count = sheet.get(element.id)
   })
+}
+
+
+/**
+ * Generate the text for the share dialog.
+ *
+ * @returns {string}
+ */
+function generateShareText() {
+  // Teams
+  const teams = {};
+  // For each [data-count] element
+  DATA_COUNT_LIST.forEach(function(element) {
+
+    // Get the count
+    const count = parseInt(element.dataset.count, 10);
+
+    // Get the Team Code and Index
+    const match = element.id.split("-");
+    if (!match || match.length != 2) {
+      throw new Error(
+        `Corrupted element id: ${element.id}`
+      );
+    }
+
+    // Extract Team Code and Index
+    const team_code = match[0];
+    const index     = parseInt(match[1], 10);
+
+    // Initialize in "teams" array
+    if (!(team_code in teams)) {
+      teams[team_code] = [];
+    };
+
+    // Push to the corresponding teams array
+    teams[team_code].push({ num: index, count: count });
+  });
+
+  /**
+   * @type {Array<string>}
+   */
+  const completed = [];
+
+  /**
+   * @type {Array<string>}
+   */
+  const missing   = [];
+
+  /**
+   * @type {Array<string>}
+   */
+  const duplicate = [];
+
+  Object.keys(teams).forEach((team_code) => {
+
+    // Sort based on the sticker number
+    const items = teams[team_code].sort((a, b) => a.num - b.num);
+
+    // Lists
+    const completedLine = items.filter((i) => i.count >=  1 ).map((i) => i.num );
+    const missingLine   = items.filter((i) => i.count === 0 ).map((i) => i.num );
+    const duplicateLine = items.filter((i) => i.count >   1 );
+
+    if (completedLine.length) {
+      completed.push(`${team_code}: ${completedLine.join(",")}`);
+    }
+    if (missingLine.length) {
+      missing.push(  `${team_code}: ${missingLine.join(",")}`);
+    }
+    if (duplicateLine.length) {
+      duplicate.push(`${team_code}: ${duplicateLine.map((i) => `${i.num} (${i.count - 1})`).join(",")}`);
+    }
+  });
+
+  // Return
+  return [
+    completed.length > 0 ? "Completed\n" + completed.join("\n") : null,
+    missing.length   > 0 ? "Missing\n"   + missing.join("\n")   : null,
+    duplicate.length > 0 ? "Duplicate\n" + duplicate.join("\n") : null,
+  ].filter(i => i !== null && i !== undefined).join("\n\n");
 }

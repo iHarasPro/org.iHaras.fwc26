@@ -119,6 +119,7 @@
     >
     <button id="new-sheet"    aria-label="New sheet."   >New</button>
     <button id="rename-sheet" aria-label="Rename sheet.">Rename</button>
+    <button id="share-sheet"  aria-label="Share sheet." >Share</button>
     <button id="delete-sheet" aria-label="Delete sheet.">Delete</button>
   </div>
 </div>
@@ -130,4 +131,32 @@
 
 
 {{- define `dialogs` }}
+<dialog id="share">
+  <header>
+    <h2>Share</h2>
+    <button id="share-close" aria-label="Close dialog.">
+      <svg
+        xmlns   = "http://www.w3.org/2000/svg"
+        viewBox = "0 0 24 24"
+        width   = "24px"
+        height  = "24px"
+      >
+        <path
+        stroke          = "currentColor"
+        stroke-width    = "2"
+        stroke-linecap  = "round"
+        d               = "
+          M  8  8  L 16 16
+          M 16  8  L  8 16
+        ">
+        </path>
+      </svg>
+    </button>
+  </header>
+  <pre class="content"></pre>
+  <div class="actions">
+    <button id="share-copy"     class="action" aria-label="Copy to clipboard.">Copy to Clipboard</button>
+    <button id="share-whatsapp" class="action" aria-label="Share to Whatsapp.">Share to WhatsApp</button>
+  </div>
+</dialog>
 {{- end }}
